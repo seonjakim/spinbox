@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
-import SquareButton from '../../components/SquareButton'
-import useLongPressCompare from '../../library/useLongPressNoUseEffect'
+import SquareButton from './components/SquareButton'
+import useLongPress from '../library/useLongPressRecursive'
 
 /**
  * each spinbox should work separately
@@ -17,35 +17,31 @@ const SpinboxCard = () => {
         return action
     }
   }
-  const [number, dispatchNumber] = useReducer(reducer, 0)
+  const [number, dispatch] = useReducer(reducer, 0)
 
   const increase = () => {
-    dispatchNumber({ type: 'INCREMENT' })
+    dispatch({ type: 'INCREMENT' })
   }
   const decrease = () => {
-    dispatchNumber({ type: 'DECREMENT' })
+    dispatch({ type: 'DECREMENT' })
   }
 
-  const longPressIncreaseCompare = useLongPressCompare(increase, 1000)
-  const longPressDecreaseCompare = useLongPressCompare(decrease, 1000)
+  const longPressIncrease = useLongPress(increase, 1000)
+  const longPressDecrease = useLongPress(decrease, 1000)
 
   return (
     <div className="card-container">
-      <input
-        value={number}
-        onChange={dispatchNumber}
-        className="input-window"
-      />
+      <input value={number} onChange={dispatch} className="input-window" />
       <SquareButton
         emphasis="high"
         onClick={increase}
-        useLongPress={longPressIncreaseCompare}
+        useLongPress={longPressIncrease}
         buttonName="+"
       />
       <SquareButton
         emphasis="high"
         onClick={decrease}
-        useLongPress={longPressDecreaseCompare}
+        useLongPress={longPressDecrease}
         buttonName="-"
       />
     </div>

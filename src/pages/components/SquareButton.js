@@ -5,7 +5,7 @@ const SquareButton = ({ useLongPress, onClick, buttonName, emphasis }) => {
     <div
       {...useLongPress}
       onClick={onClick}
-      className={`button-common square-button ${emphasis}`}
+      className={`button-common ${emphasis}`}
     >
       {buttonName}
     </div>

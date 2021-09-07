@@ -3,46 +3,46 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 /**
  * with useEffect
  */
-const useLongPress = (onLongPress = () => {}, ms = 1000) => {
-  const [isLongPress, setIsLongPress] = useState(false)
-  const timer = useRef(false)
+const useLongPress = (callback = () => {}, ms = 1000) => {
+  const [longPress, setLongPress] = useState(false)
+  const timerId = useRef(false)
   let delay = ms
 
   const doInterval = () => {
-    timer.current = setTimeout(() => {
-      onLongPress(), doInterval()
+    timerId.current = setTimeout(() => {
+      callback(), doInterval()
     }, delay)
     /** shorten the delay time */
     delay > 100 ? (delay -= 90) : ''
   }
 
   useEffect(() => {
-    if (isLongPress) {
+    if (longPress) {
       doInterval()
     } else {
-      clearTimeout(timer.current)
+      clearTimeout(timerId.current)
     }
     return () => {
-      clearTimeout(timer.current)
+      clearTimeout(timerId.current)
     }
-  }, [isLongPress])
+  }, [longPress])
 
-  const onPress = () => {
-    setIsLongPress(true)
+  const pressBegin = () => {
+    setLongPress(true)
   }
-  const offPress = () => {
-    setIsLongPress(false)
+  const pressEnd = () => {
+    setLongPress(false)
   }
 
   return useMemo(
     () => ({
-      onMouseDown: onPress,
-      onMouseUp: offPress,
-      onMouseLeave: offPress,
-      onTouchStart: onPress,
-      onTouchEnd: offPress,
+      onMouseDown: pressBegin,
+      onMouseUp: pressEnd,
+      onMouseLeave: pressEnd,
+      onTouchStart: pressBegin,
+      onTouchEnd: pressEnd,
     }),
-    [onPress, offPress]
+    [pressBegin, pressEnd]
   )
 }
 

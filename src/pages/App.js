@@ -1,19 +1,24 @@
 import React, { useState } from 'react'
-import SpinboxCard from './midAbstraction/SpinboxCard'
-import SquareButton from '../components/SquareButton'
+import SpinboxCard from './SpinboxCard'
+import SquareButton from './components/SquareButton'
 
 const App = () => {
-  const [newSpinbox, setNewSpinbox] = useState([1])
+  const [spinboxKey, setSpinboxKey] = useState([0])
 
-  const createSpinboxes = newSpinbox.map((el, idx) => <SpinboxCard key={idx} />)
+  const spinboxes = spinboxKey.map((el) => <SpinboxCard key={el} />)
 
   return (
     <div className="container-background">
       <div className="spinbox-container">
-        <div className="spinbox-window">{createSpinboxes}</div>
+        <div className="spinbox-window">{spinboxes}</div>
         <div className="add-spinbox-area">
           <SquareButton
-            onClick={() => setNewSpinbox([...newSpinbox, 1])}
+            onClick={() =>
+              setSpinboxKey([
+                ...spinboxKey,
+                spinboxKey[spinboxKey.length - 1] + 1,
+              ])
+            }
             buttonName="more spinbox"
             emphasis="low"
           />
