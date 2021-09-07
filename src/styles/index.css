@@ -24,7 +24,7 @@
   grid-template-rows: repeat(8, 1fr);
   gap: 10px;
   padding: 1em;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .add-spinbox-area {
   display: flex;
@@ -41,8 +41,6 @@
   border: 1px solid #eee;
   box-shadow: var(--button-shadow);
   font-size: 2rem;
-}
-.square-button {
   border-radius: 4px;
 }
 .high {
@@ -69,14 +67,6 @@
   border: 2px dashed #bababa;
   text-align: center;
   font-size: 2rem;
-}
-/** input-window size control */
-.small {
-  width: 240px;
-  height: 40px;
-}
-.small .input-window {
-  font-size: 1rem;
 }
 
 @media screen and (max-width: 1400px) {
