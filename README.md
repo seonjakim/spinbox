@@ -21,11 +21,11 @@
   - [Mount와 Render](#Mount와-Render)
   - [Update와 Re-render](#Update와-Re-render)
 
-- [lifecyle을 모르면 발생할 수 있는 문제점 (Unmount설명)](<#lifecyle을-모르면-발생할-수-있는-문제점-(Unmount설명)>)
+- [lifecyle을 모르면 발생할 수 있는 문제점 (Unmount설명)](#lifecyle을-모르면-발생할-수-있는-문제점-(Unmount설명))
 
 [useEffect 설명](#useEffect)
 
-[Naming rules (참고자료 : Code complete 2)](<#Naming-rules-(참고자료-:-Code-complete-2)>)
+[Naming rules (참고자료 : Code complete 2)](#Naming-rules-(참고자료-:-Code-complete-2))
 
 <br>
 
