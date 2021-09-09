@@ -188,7 +188,7 @@ setState의 경우 Object형태로 저장하여 batching이라는 과정을 통�
 
 ![](https://images.velog.io/images/seonja/post/747a57f9-3d5f-4867-8917-47caf479d16d/Screen%20Shot%202021-09-08%20at%2016.04.27.png)
 
-모든 라이프 사이클을 살펴볼 수 있는 간단한 컴포넌트를 만들었습니다.
+모든 라이프 사이클을 살펴볼 수 있는 간단한 프로젝트를 만들었습니다.
 전체적으로는 Discussion, Rules, Workflow 컴포넌트를 구성하여 Router를 이용해서 각 컴포넌트를 mount와 unmount할 수 있도록 구성하였습니다.
 
 <br>
@@ -227,7 +227,7 @@ update시 (props가 있을 경우) getDerivedStateFromProps, shouldComponentUpda
 
 <br>
 
-> 각 컴포넌트는 모두 각각의 lifecycle을 가지고 있고 저 method들은 mount, update, unmount시 처리해줘야 하는 로직들을 처리할 수 있도록 도와주는 역할이라는 것을 인지하게 되었습니다.
+> 각 컴포넌트는 모두 각각의 lifecycle을 가지고 있고 상단의 method들은 mount, update, unmount시 처리해줘야 하는 로직들을 처리할 수 있도록 도와주는 역할이라는 것을 인지하게 되었습니다.
 
 <br>
 
@@ -315,9 +315,9 @@ useEffect(() => {
 
 ### 고려사항
 
-- 좋은 이름은 ‘어떻게’보다 ‘무엇’을 표현
+- 좋은 이름은 ‘어떻게’보다 ‘무엇’을 표현한다.
 - 긴 이름은 거의 사용하지 않는 변수나 전역변수에 좋고 짧은 이름은 지역 변수나 반복문 변수에 좋다.
-- Total, Sum, Average, Max, Min, Record, String, Pointer과 같은 한정자로 변수 이름을 만들 경우 이름 끝네 한정자를 입력 ex) revenueTotal
+- Total, Sum, Average, Max, Min, Record, String, Pointer과 같은 한정자로 변수 이름을 만들 경우 이름 끝네 한정자를 입력한다. ex) revenueTotal
   - 예외 : Num은 이름 앞에 있으면 총계를 가리키고 변수 끝에 있으면 인덱스를 가리킨다. 혼란을 피하기 위해 Count나 Total, Index를 사용하는 것이 좋다.
 
 ### 일반적인 변수명의 반의어
@@ -336,10 +336,10 @@ useEffect(() => {
 
 ### Boolean 변수 이름
 
-- done 무언가 수행되었음을 가리키기 위해서 사용. done을 거짓으로 설정하고 완료되면 참으로 설정
-- error 오류가 발생했음을 가리키기 위해 사용. 오류가 발생했을 때를 참으로 설정하고 발생하지 않았을 때를 거짓으로 설정
-- found 값이 발견되었다는 것을 가리키기 위해 사용. 값이 발견되지 않았을 때 거짓으로 설정하고 발견되었을 때 참으로 설정
-- success 또는 ok 연산이 성공적인지 가리키기 위해서 사용. 연산이 실패했을 때 거짓으로 설정하고 성공했을 때 참으로 설정. processingComplete와 같이 구체적인 이름으로 대체하면 더 정확하게 설명할 수 있다.
+- done 무언가 수행되었음을 가리키기 위해서 사용하고, done을 거짓으로 설정하고 완료되면 참으로 설정한다.
+- error 오류가 발생했음을 가리키기 위해 사용하고, 오류가 발생했을 때를 참으로 설정하고 발생하지 않았을 때를 거짓으로 설정한다.
+- found 값이 발견되었다는 것을 가리키기 위해 사용하고, 값이 발견되지 않았을 때 거짓으로 설정하고 발견되었을 때 참으로 설정한다.
+- success 또는 ok 연산이 성공적인지 가리키기 위해서 사용하고, 연산이 실패했을 때 거짓으로 설정하고 성공했을 때 참으로 설정한다. processingComplete와 같이 구체적인 이름으로 대체하면 더 정확하게 설명할 수 있다.
 - is를 입력하면 간단한 논리 표현식에서 가독성이 떨어지게 된다. if (isFound)는 if (found)보다 가독성이 떨어진다.
 
 ### 이름 규약의 효과
