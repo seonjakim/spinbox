@@ -25,7 +25,7 @@
 
 [useEffect 설명](#useEffect)
 
-[Naming rules (참고자료 : Code complete 2)](#Naming-rules-(참고자료-:-Code-complete-2))
+[Naming rules](#Naming-rules)
 
 <br>
 
@@ -311,7 +311,8 @@ useEffect(() => {
 <br>
 <br>
 
-# Naming rules (참고자료 : Code complete 2)
+# Naming rules
+(참고자료 : Code complete 2)
 
 ### 고려사항
 
