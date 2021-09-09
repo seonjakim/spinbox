@@ -1,0 +1,90 @@
+/** css reset */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+nav,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+  vertical-align: baseline;
+  font: inherit;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+/** css tokens */
+:root {
+  --naver-green: #00c73c;
+  --background-color: #f9f9f9;
+}
+
+/** container related css */
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
+}
+.spinbox-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.button-container {
+  width: 100%;
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/** button related css */
+.button-common {
+  width: 22%;
+  font-size: 2rem;
+  border-radius: 4px;
+  background-color: white;
+}
+.high {
+  background-color: var(--naver-green);
+  border: 1px solid var(--naver-green);
+  color: #fff;
+}
+.low {
+  color: var(--naver-green);
+  border: 1px solid var(--naver-green);
+}
+
+/** spinbox card related css */
+.card-container {
+  width: 360px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7em;
+  border-radius: 4px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: white;
+  margin: 4px;
+}
+.input-window {
+  width: 50%;
+  border: 2px dashed #bababa;
+  text-align: center;
+  font-size: 2rem;
+}
