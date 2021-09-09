@@ -2,13 +2,13 @@ import React from 'react'
 
 const SquareButton = ({ useLongPress, onClick, buttonName, emphasis }) => {
   return (
-    <div
+    <button
       {...useLongPress}
       onClick={onClick}
       className={`button-common ${emphasis}`}
     >
       {buttonName}
-    </div>
+    </button>
   )
 }
 
