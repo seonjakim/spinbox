@@ -59,15 +59,8 @@ input:focus {
   font-size: 2rem;
   border-radius: 4px;
   background-color: white;
-}
-.high {
+  color: white;
   background-color: var(--naver-green);
-  border: 1px solid var(--naver-green);
-  color: #fff;
-}
-.low {
-  color: var(--naver-green);
-  border: 1px solid var(--naver-green);
 }
 
 /** spinbox card related css */

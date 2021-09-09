@@ -1,8 +1,7 @@
 import React, { useReducer } from 'react'
-import SquareButton from './components/SquareButton'
 import useLongPress from './library/useLongPress'
 
-const SpinboxCard = () => {
+const Spinbox = () => {
   const reducer = (number, action) => {
     switch (action.type) {
       case 'INCREMENT':
@@ -31,20 +30,22 @@ const SpinboxCard = () => {
         onChange={(e) => dispatch(e.target.value)}
         className="input-window"
       />
-      <SquareButton
-        emphasis="high"
+      <button
         onClick={increment}
-        useLongPress={longPressIncrement}
-        buttonName="+"
-      />
-      <SquareButton
-        emphasis="high"
+        {...longPressIncrement}
+        className="button-common"
+      >
+        +
+      </button>
+      <button
         onClick={decrement}
-        useLongPress={longPressDecrement}
-        buttonName="-"
-      />
+        {...longPressDecrement}
+        className="button-common"
+      >
+        -
+      </button>
     </div>
   )
 }
 
-export default SpinboxCard
+export default Spinbox
